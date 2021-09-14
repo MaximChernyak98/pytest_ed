@@ -4,7 +4,7 @@ import json
 from helpers import debug_save_to_json_request_and_response
 
 
-def send_request(uri, payload, headers):
+def send_request_goodsItemSearch(uri, payload, headers):
     url = uri + '/goodsItemSearch'
     payload['Body']["Id"] = 3079071
 
