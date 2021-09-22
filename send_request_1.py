@@ -16,4 +16,4 @@ def send_request_delivery_info(uri, payload, headers):
     pass
 
 
-send_request_goodsItemSearch(uri, payload, headers)
+send_request_goods_item_search(uri, payload, headers)
