@@ -13,7 +13,8 @@ def print_field_in_body_value(response, field_name=''):
 def check_goods_item_list_not_empty(response):
     assert len(response['Body']['GoodsItemList'])
 
-
+def kojoij():
+    assert "dfjsdfkj"
 
 def test_send_request_goods_item_search():
     good_ids = ["3079071", "3078423", "3139913"]
