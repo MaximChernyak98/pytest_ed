@@ -9,11 +9,16 @@ def send_request_goods_item_search(uri, payload, headers):
     payload['Body']["Id"] = "3079071"
 
     response = requests.post(url, data=json.dumps(payload, indent=4), headers=headers)
-    debug_save_to_json_request_and_response(payload=payload, response=response, test_purpose='тест')
+    debug_save_to_json_request_and_response(payload=payload, response=response, test_purpose='тест1')
 
 
 def send_request_delivery_info(uri, payload, headers):
-    pass
+    url = uri + '/DeliveryInfo'
+    payload['Body']
+
+    response = requests.post(url, data=json.dumps(payload, indent=4), headers=headers)
+    debug_save_to_json_request_and_response(payload=payload, response=response, test_purpose='тест2')
 
 
-send_request_goods_item_search(uri, payload, headers)
+# send_request_goods_item_search(uri, payload, headers)
+send_request_delivery_info(uri, payload, headers)

@@ -10,13 +10,13 @@ def print_field_in_body_value(response, field_name=''):
 
 
 
-def check_goods_item_list_not_empty(response):
-    assert len(response['Body']['GoodsItemList'])
+# def check_goods_item_list_not_empty(response):
+   # assert len(response['Body']['GoodsItemList']) !=0
 
 
 
 def test_send_request_goods_item_search():
-    good_ids = ["3079071", "3078423", "3139913"]
+    good_ids = ["3079071", "3078423"]
     for id in good_ids:
         url = uri + '/goodsItemSearch'
         payload['Body']["Id"] = id
@@ -24,7 +24,6 @@ def test_send_request_goods_item_search():
         response = requests.post(url, data=json.dumps(payload, indent=4), headers=headers)
         debug_save_to_json_request_and_response(payload=payload, response=response, test_purpose=id)
 
-        print_field_in_body_value(response=response.json(), field_name='DefaultCategoryName')
-        # check_goods_item_list_not_empty(response=response.json())
-        
+        # print_field_in_body_value(response=response.json(), field_name='Id')
+        check_goods_item_list_not_empty(response=response.json())
         
