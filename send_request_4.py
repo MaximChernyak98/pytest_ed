@@ -18,7 +18,7 @@ def check_goods_item_list_not_empty(response):
     assert goodsitemlist_count !=0
 
 
-# проверка строки TotalCount в боди
+# проверка строки SearchId в боди
 def print_field_in_body_value_SearchId(response, field_name=''):
     assert field_name in response['Body'].keys()
     # print(response['Body'][field_name])
@@ -26,10 +26,10 @@ def print_field_in_body_value_SearchId(response, field_name=''):
 
 def test_send_request_goods_item_search():
     url = uri + '/goodsItemSearch'
-    payload['Body']['GoodsCategoryId'] = "0"
+    payload['Body']['GoodsCategoryId'] = "5526"
 
     response = requests.post(url, data=json.dumps(payload, indent=4), headers=headers)
     debug_save_to_json_request_and_response(payload=payload, response=response, test_purpose='test6')
 
-    print_field_in_body_value_total_count(response=response.json(), field_name='SearchId')
-    check_goods_item_list_not_empty_brand(response=response.json())
+    print_field_in_body_value_SearchId(response=response.json(), field_name='SearchId')
+    check_goods_item_list_not_empty(response=response.json())
